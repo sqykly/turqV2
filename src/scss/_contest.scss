@@ -30,3 +30,16 @@
   box-shadow: 0 4px 8px -4px rgba(0,0,0,0.4);
   border-radius: 0.2rem
 }
+
+.left-contest-panel {
+  min-height: 400px;
+  background-color: $white;
+  border-bottom: 2px solid $medium-gray;
+  border-top: 2px solid $medium-gray;
+}
+.right-contest-panel {
+  min-height: 400px;
+  background-color: $light-gray;
+  border-bottom: 2px solid $medium-gray;
+  border-top: 2px solid $medium-gray;
+}
