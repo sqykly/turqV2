@@ -3,11 +3,9 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 
 import ContestPanelList from "../components/competition/contestPanelList"
-import {isPastEndDate } from "../util/dateCompare"
 import { CONTEST_DATA_URL } from "../constants"
 import Layout from "../components/layout"
 import Hero from "../components/hero"
-import Explainer from "../components/explainer"
 
 class Home extends React.Component {
 
