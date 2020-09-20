@@ -4,7 +4,7 @@ import { convertToRaw, convertFromRaw } from "draft-js"
 import axios from "axios"
 import { connect } from 'react-redux'
 import { toast } from 'react-toastify';
-import { Button } from 'react-bootstrap'
+import { Button } from '@material-ui/core'
 import isEmpty from 'underscore/modules/isEmpty'
 
 import EditorLayout from "../components/editor/layout"
@@ -116,8 +116,8 @@ class ContestEditor extends React.Component {
           show={this.state.showModal}
           header="Previous Data Found!"
           body="You have unsaved work, would you like to load it now?">
-            <Button variant="primary" onClick={() => this.populateSavedData(true)}>Accept</Button>
-            <Button variant="Secondary" onClick={() => this.populateSavedData(false)}>Decline</Button>
+            <Button variant="contained" color="primary" onClick={() => this.populateSavedData(true)}>Accept</Button>
+            <Button variant="contained" color="secondary" onClick={() => this.populateSavedData(false)}>Decline</Button>
         </Modal>
     }
 

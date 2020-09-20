@@ -1,10 +1,10 @@
 import React from "react"
-import { Button } from "react-bootstrap"
+import { Button } from "@material-ui/core"
 import { Link } from "react-router-dom"
 import { connect } from 'react-redux'
 
 import LegislationText from "../components/legislation/legislationText"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import { isPastEndDate } from "../util/dateCompare"
 import { CONTEST_PAGE_URL, EDITOR_PAGE_URL } from "../constants"
 import { fetchLegislation } from '../actions/legislationActions'

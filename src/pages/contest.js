@@ -2,10 +2,10 @@ import React from "react"
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom"
-import { Button } from "react-bootstrap"
+import { Button } from "@material-ui/core"
 import { connect } from 'react-redux'
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import { fetchContest } from "../actions/contestActions"
 import DismissableAlert from "../components/dismissableAlert"
 import {isPastEndDate } from "../util/dateCompare"
@@ -74,7 +74,7 @@ class ContestPage extends React.Component {
               >
 
                 {!isPastEndDate(contest.endDate)
-                  ? <Button variant="turq" size="lg" > Create New Legislation </Button>
+                  ? <Button variant="contained" size="lg" > Create New Legislation </Button>
                   : null
                 }
               </Link>

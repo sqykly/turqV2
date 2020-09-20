@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "react-bootstrap"
+import { Button } from "@material-ui/core"
 import { Link } from "react-router-dom";
 
 const Hero = ({header, subtext, link, buttonText}) => (
@@ -12,7 +12,7 @@ const Hero = ({header, subtext, link, buttonText}) => (
         <p className="hero-subtitle mt-4">{subtext}</p>
         <p className="mt-4">
           <Link to={link}>
-            <Button variant="turq">{buttonText}</Button>
+            <Button variant="contained">{buttonText}</Button>
           </Link>
         </p>
       </div>

@@ -13,6 +13,7 @@
   height:501px;
   position: absolute;
   background: linear-gradient( rgba(10,10,10, .55), rgba(10,10,10, .85)), url(/images/hero_image.jpeg);
+  border-bottom: 6px solid $turq-primary;
 }
 .hero-header {
   color:white;

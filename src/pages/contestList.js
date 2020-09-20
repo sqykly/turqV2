@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from 'react-redux'
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import CompetitionList from "../components/competition/competitionList"
 import { fetchAllContests } from '../actions/contestActions'
 import {isPastEndDate } from "../util/dateCompare"

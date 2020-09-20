@@ -9,7 +9,6 @@ import PrivateRoute from "./components/privateRoute"
 import Home from './pages/home';
 import About from './pages/about';
 import Drafter from './pages/drafter';
-import Sponsor from './pages/sponsor';
 import ContestList from './pages/contestList';
 import Contest from './pages/contest';
 import Legislation from './pages/legislation';
@@ -49,7 +48,6 @@ function App() {
       <Route path={constants.HOME_PAGE_URL} exact component={Home} />
       <Route path={constants.ABOUT_PAGE_URL} component={About} />
       <Route path={constants.DRAFTER_PAGE_URL} component={Drafter} />
-      <Route path={constants.SPONSOR_PAGE_URL} component={Sponsor} />
       <Route path={constants.LOGIN_PAGE_URL} component={Login} />
       <Route path={constants.REGISTER_PAGE_URL} component={Register} />
       <Route path={constants.CONTEST_PAGE_URL} exact component={ContestList} />

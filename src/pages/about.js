@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import Team from "../components/about/team"
 import Vision from "../components/about/vision"
 import Story from "../components/about/process"
@@ -33,7 +33,7 @@ class AboutPage extends React.Component {
   render() {
     return <Layout fullWidth pageTitle="Turq | About" description="Turq's mission is to make direct democracy viable by enabling citizens to draft and submit their own legislation">
       <div className="row about-task">
-        <button onClick={() => {this.changeView("team") }}  className={this.getClassNames("team") + " ml-auto"}>
+        <button onClick={()=> {this.changeView("team") }}  className={this.getClassNames("team") + " ml-auto"}>
           <h4>Our Team</h4>
         </button>
         <button onClick={() => {this.changeView("story") }} className={this.getClassNames("story")}>

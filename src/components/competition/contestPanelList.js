@@ -1,17 +1,17 @@
 import React from "react"
-import CompetitionCard from "./competitionCard"
 import PropTypes from "prop-types"
+import ContestPanel from "./contestPanel"
 import { CONTEST_PAGE_URL } from "../../constants"
 
 const CompetitionList = ({title, contests}) => {
   const contestCards = contests
-    .map(contest => <CompetitionCard
+    .map((contest, idx) => <ContestPanel
                    title={contest.title}
-                   link={CONTEST_PAGE_URL + "/" + contest.id}
                    description={contest.description}
-                   endDate={contest.endDate}
-                   id={contest.id}
+                   link={CONTEST_PAGE_URL + "/" + contest.id}
                    key={contest.id}
+                   //This acts as a way to flip the color left-right color scheme every row
+                   left={idx % 4 == 0 || idx % 4 == 3}
                  />)
   return (
     <>
