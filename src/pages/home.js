@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios";
 import { toast } from 'react-toastify';
 
-import CompetitionList from "../components/competition/competitionList"
+import ContestPanelList from "../components/competition/contestPanelList"
 import {isPastEndDate } from "../util/dateCompare"
 import { CONTEST_DATA_URL } from "../constants"
 import Layout from "../components/layout"
@@ -26,7 +26,7 @@ class Home extends React.Component {
     var currentContests = null 
     if (this.state && this.state.contests) {
       currentContests = this.state.contests 
-        .filter(contest => !isPastEndDate(contest.endDate))
+        //.filter(contest => !isPastEndDate(contest.endDate))
     }
     return (
       <Layout fullWidth>
@@ -37,20 +37,13 @@ class Home extends React.Component {
             buttonText="Learn More About Turq »"
             subtext="If you want better public policy, you need a legislative bill written. If you want a bill written, you have limited options. Either write it yourself, or get a politician to write it for you. But thousands of other constituents are also asking politicians to write them legislation everyday, and writing it yourself can be intimidating. Turq is the solution."/>
         </div>
-        <div className="row">
-          <Explainer id="HowItWorks"/>
-        </div>
-        <div className=" mt-5">
-          <div className="col-9 mx-auto">
-            <div className="content mx-auto mb-5">
-            {currentContests && currentContests.length > 0
-            ? <div>
-                <CompetitionList title="Active Contests" contests={currentContests} />
-              </div>
-            : <></>
-            }
+        <div className=" my-5">
+          {currentContests && currentContests.length > 0
+          ? <div>
+              <ContestPanelList title="Active Contests" contests={currentContests} />
             </div>
-          </div>
+          : <></>
+          }
         </div>
       </Layout>
     )
