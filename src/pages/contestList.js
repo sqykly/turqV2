@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from 'react-redux'
 
 import Layout from "../components/layout/layout"
-import CompetitionList from "../components/competition/competitionList"
+import ContestPanelList from "../components/competition/contestPanelList"
 import { fetchAllContests } from '../actions/contestActions'
 import {isPastEndDate } from "../util/dateCompare"
 
@@ -27,10 +27,10 @@ class ContestPage extends React.Component {
         {this.props.allContests
           ? <>
             <div>
-              <CompetitionList title="Active Contests" contests={currentContests} />
+              <ContestPanelList title="Active Contests" contests={currentContests} />
             </div>
             <div className="mt-5">
-              <CompetitionList title="Past Contests" contests={pastContests} />
+              <ContestPanelList title="Past Contests" contests={pastContests} />
             </div>
           </>
           : <></>

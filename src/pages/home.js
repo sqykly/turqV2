@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import Grid from '@material-ui/core/Grid';
 
 import ContestPanelList from "../components/competition/contestPanelList"
-import {isPastEndDate } from "../util/dateCompare"
 import { CONTEST_DATA_URL } from "../constants"
 import Layout from "../components/layout/layout"
 import Hero from "../components/hero"
