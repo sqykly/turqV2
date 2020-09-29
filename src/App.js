@@ -5,7 +5,8 @@ import { loadProgressBar } from 'axios-progress-bar'
 import {Helmet} from "react-helmet";
 import { ToastContainer } from 'react-toastify';
 
-import PrivateRoute from "./components/privateRoute"
+import PrivateRoute from "./components/routing/privateRoute"
+import ScrollToTop from "./components/routing/scrollToTop"
 import Home from './pages/home';
 import About from './pages/about';
 import Drafter from './pages/drafter';
@@ -27,6 +28,7 @@ loadProgressBar('',api)
 function App() {
   return (
   <BrowserRouter>
+    <ScrollToTop />
     <div className="App">
       <Helmet>
           <meta charset="utf-8" />
