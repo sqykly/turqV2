@@ -1,16 +1,14 @@
 import React from "react"
 import { Button } from "@material-ui/core"
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types"
-import Truncate from "react-truncate"
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import {  EDITOR_PAGE_URL } from "../../constants"
 
 import LegislationList from "../legislation/legislationList"
 import {isPastEndDate } from "../../util/dateCompare"
+import { propTypes } from "react-bootstrap/esm/Image";
 
 
 const ContestSubmissionsCard = ({contest, legislationList}) => (
@@ -38,19 +36,11 @@ const ContestSubmissionsCard = ({contest, legislationList}) => (
 export default ContestSubmissionsCard
 
 ContestSubmissionsCard.propTypes = {
-  title: PropTypes.string,
-  id: PropTypes.number,
-  description: PropTypes.string,
-  link: PropTypes.string,
-  left: PropTypes.bool,
-  buttonText: PropTypes.string
+  contest: propTypes.object,
+  legislationList: propTypes.array
 }
 
 ContestSubmissionsCard.defaultProps = {
-  title: "",
-  id: null,
-  description: "",
-  link: "",
-  left: true ,
-  buttonText: "View Contest"
+  contest: null,
+  legislationList: []
 }

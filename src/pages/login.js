@@ -78,7 +78,9 @@ class LoginPage extends React.Component {
                 </Button>
               </Grid>
               <Grid item xs>
-                <span>First Time?&nbsp;<Link to={{pathname: "/register", state: { referer: this.state.referer}}}>Create New Account</Link></span>
+                <div class="login-switch">
+                  <span>First Time?&nbsp;<Link to={{pathname: "/register", state: { referer: this.state.referer}}}>Create New Account</Link></span>
+                </div>
               </Grid>
             </Grid>
           </form>

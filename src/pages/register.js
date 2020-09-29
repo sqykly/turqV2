@@ -79,7 +79,9 @@ class RegisterPage extends React.Component {
                   </Button>
                 </Grid>
                 <Grid item xs>
-                  <span>Already Have an Account?&nbsp;<Link to={{pathname: "/login", state: { referer: this.state.referer}}}>Sign In</Link></span>
+                  <div class="login-switch">
+                    <span>Already Have an Account?&nbsp;<Link to={{pathname: "/login", state: { referer: this.state.referer}}}>Sign In</Link></span>
+                  </div>
                 </Grid>
               </Grid>
               </form>
