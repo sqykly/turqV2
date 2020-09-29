@@ -16,11 +16,17 @@ const Layout = ({ children, fullWidth, isAuthenticated, logout, pageTitle, descr
           <meta name="description" content={description} />
           <title>{pageTitle}</title>
       </Helmet>
-      <Header  logout={logout} isAuthenticated={isAuthenticated}/>
-      <Grid container spacing={0} className="main" justify="center">
-        {children}
+      <Grid direction="column" container className="main">
+        <Grid direction="row" item container>
+          <Header  logout={logout} isAuthenticated={isAuthenticated}/>
+        </Grid>
+        <Grid direction="row" item container className="main">
+          {children}
+        </Grid>
+        <Grid direction="row" item container>
+          <Footer />
+        </Grid>
       </Grid>
-      <Footer />
     </div>
     </>
   )
