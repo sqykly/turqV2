@@ -4,18 +4,17 @@ import ContestPanel from "./contestPanel"
 import { CONTEST_PAGE_URL } from "../../constants"
 import Grid from '@material-ui/core/Grid';
 
-const CompetitionList = ({title, contests}) => {
+const ContestPanelList = ({title, contests}) => {
   const contestCards = contests
     .map((contest, idx) =>
-                <Grid item xs={12} md={6} xl={4}>
+                <Grid item xs={12} md={6} xl={4} key={contest.id}>
                   <ContestPanel
                    title={contest.title}
                    description={contest.description}
                    link={CONTEST_PAGE_URL + "/" + contest.id}
-                   key={contest.id}
                    //This acts as a way to flip the color left-right color scheme every row
                    left={idx % 4 == 0 || idx % 4 == 3}
-                 />
+                  />
                 </Grid>)
   return (
     <div style={{padding:20}}>
@@ -32,14 +31,14 @@ const CompetitionList = ({title, contests}) => {
   )
 }
 
-export default CompetitionList
+export default ContestPanelList
 
-CompetitionList.propTypes = {
+ContestPanelList.propTypes = {
   title: PropTypes.string,
   contests: PropTypes.array
 }
 
-CompetitionList.defaultProps = {
+ContestPanelList.defaultProps = {
   title: "",
   contests: []
 }

@@ -8,7 +8,7 @@ import { logout } from "../../actions/logout"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children, fullWidth, isAuthenticated, logout, pageTitle, description }) => {
+const Layout = ({ children, isAuthenticated, logout, pageTitle, description }) => {
   return (
     <>
       <div className="site">

@@ -7,30 +7,37 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import {  EDITOR_PAGE_URL } from "../../constants"
 
-const ContestPanel = ({title, link, description, left, buttonText}) => (
+import LegislationList from "../legislation/legislationList"
+import {isPastEndDate } from "../../util/dateCompare"
+
+
+const ContestSubmissionsCard = ({contest, legislationList}) => (
   <Card>
     <CardContent>
       <Typography gutterBottom  variant="h5" component="h2">
-        {title}
+        <Link
+          to={EDITOR_PAGE_URL + "/legislation?contest=" + contest.id}
+        >
+          {!isPastEndDate(contest.endDate)
+            ? <Button variant="contained" size="lg" > Create New Legislation </Button>
+            : null
+          }
+        </Link>
       </Typography>
-      <Typography variant="body2" color="textSecondary" component="p">
-        <Truncate lines={5} ellipsis={<span>... </span>}>
-          {description}
-        </Truncate>
+      <Typography variant="body2" color="textSecondary" component="div">
+        <h2>Legislation Submitted For This Contest</h2>
+        <hr />
+        <LegislationList legislation={legislationList}/>
       </Typography>
     </CardContent>
-    <CardActions>
-      <Link to={link}>
-        <Button  color="primary">{buttonText}</Button>
-      </Link>
-    </CardActions>
   </Card>
 )
 
-export default ContestPanel
+export default ContestSubmissionsCard
 
-ContestPanel.propTypes = {
+ContestSubmissionsCard.propTypes = {
   title: PropTypes.string,
   id: PropTypes.number,
   description: PropTypes.string,
@@ -39,7 +46,7 @@ ContestPanel.propTypes = {
   buttonText: PropTypes.string
 }
 
-ContestPanel.defaultProps = {
+ContestSubmissionsCard.defaultProps = {
   title: "",
   id: null,
   description: "",
