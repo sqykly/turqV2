@@ -4,7 +4,6 @@ import { LEGISLATION_SUBTEXT } from "../../constants"
 import PropTypes from "prop-types"
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 
 function LegislationText ({title, chapter, section, accomplishes, terms, purpose, provisions, other, exceptions}) {
   return (

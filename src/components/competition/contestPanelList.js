@@ -13,7 +13,7 @@ const ContestPanelList = ({title, contests}) => {
                    description={contest.description}
                    link={CONTEST_PAGE_URL + "/" + contest.id}
                    //This acts as a way to flip the color left-right color scheme every row
-                   left={idx % 4 == 0 || idx % 4 == 3}
+                   left={idx % 4 === 0 || idx % 4 === 3}
                   />
                 </Grid>)
   return (
