@@ -41,7 +41,7 @@ const ContestPanel = ({title, link, description, buttonText, funding}) => (
         </Grid>
         <Grid item>
           <Share
-            url={window.location.href}
+            url={`${window.location.host}${link}`}
             options={{
               text: TWITTER_SHARE_TEXT,
               size: "large",
